@@ -244,31 +244,58 @@
     .rg-email{padding:48px 20px !important;}
     .rg-email h2{font-size:28px !important;}
     .rg-newsletter {
-      padding: 32px 20px !important;
+      padding: 32px 20px 28px !important;
+      height: auto !important;
+      min-height: 0 !important;
     }
 
     .rg-newsletter-inner {
+      display: flex !important;
       flex-direction: column !important;
+      justify-content: flex-start !important;
       align-items: stretch !important;
+      align-content: flex-start !important;
+      flex-wrap: nowrap !important;
+      gap: 18px !important;
+      height: auto !important;
+      min-height: 0 !important;
       text-align: center !important;
-      gap: 20px !important;
     }
 
     .rg-newsletter-inner > div {
       width: 100% !important;
       max-width: none !important;
       box-sizing: border-box !important;
+      flex: 0 0 auto !important;
+      min-height: 0 !important;
+      margin: 0 !important;
     }
 
     .rg-newsletter form {
-      flex-direction: column !important;
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: stretch !important;
+      gap: 8px !important;
       width: 100% !important;
+      margin: 0 !important;
     }
 
-    .rg-newsletter input,
-    .rg-newsletter button {
-      width: 100% !important;
+    .rg-newsletter input {
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
+      width: auto !important;
       box-sizing: border-box !important;
+      padding: 13px 16px !important;
+    }
+
+    .rg-newsletter button {
+      flex: 0 0 auto !important;
+      width: auto !important;
+      box-sizing: border-box !important;
+      padding: 13px 16px !important;
+      font-size: 13px !important;
+      white-space: nowrap !important;
     }
     .rg-email form{
       width:100% !important;
