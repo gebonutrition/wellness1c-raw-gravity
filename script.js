@@ -1,4 +1,4 @@
-const LANDING_NAME = "wellness1";
+const LANDING_NAME = "wellness1c";
 
 const AMAZON_URLS = {
   tiktok:
@@ -15,6 +15,17 @@ const AMAZON_URLS = {
 };
 
 const DEFAULT_AMAZON_URL = AMAZON_URLS.meta;
+
+const currentSource = (
+  new URLSearchParams(window.location.search).get("source") || "unknown"
+).toLowerCase();
+
+const currentAmazonUrl =
+  AMAZON_URLS[currentSource] || DEFAULT_AMAZON_URL;
+
+document.querySelectorAll("[data-amazon-link]").forEach((link) => {
+  link.href = currentAmazonUrl;
+});
 
 const form = document.getElementById("lead-form");
 const emailInput = document.getElementById("email-input");
@@ -71,18 +82,11 @@ if (!form || !emailInput || !submitButton || !successState) {
 	  window.rawGravityTrackMetaLead();
 	}
 
-	const amazonUrl =
-	  AMAZON_URLS[source.toLowerCase()] || DEFAULT_AMAZON_URL;
-
-	setTimeout(() => {
-	  window.location.href = amazonUrl;
-	}, 2000);
-
     } catch (error) {
       console.error("Klaviyo submission error:", error);
 
       submitButton.disabled = false;
-      submitButton.textContent = "I want the 25% code →";
+      submitButton.textContent = "Join the community";
 
       alert("Something went wrong. Please try again.");
     }

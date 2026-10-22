@@ -16,7 +16,15 @@
 <script src="./fbpixel.js"></script>
 </head>
 <body>
-
+<noscript>
+  <img
+    height="1"
+    width="1"
+    style="display:none"
+    src="https://www.facebook.com/tr?id=1632582321547641&amp;ev=PageView&amp;noscript=1"
+    alt=""
+  >
+</noscript>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Pacifico&amp;display=swap" rel="stylesheet">
@@ -25,6 +33,67 @@
   .script{font-family:'Pacifico',cursive;font-weight:400;}
   a{color:#E8437A;}
   a:hover{color:#C7295F;}
+  @keyframes rgMarquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .rg-marquee {
+    overflow: hidden;
+    background: #171717;
+    color: #FFE08A;
+    white-space: nowrap;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .rg-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: rgMarquee 36s linear infinite;
+    will-change: transform;
+  }
+
+  .rg-marquee-group {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+  }
+
+  .rg-marquee-group span {
+    display: block;
+    flex: 0 0 auto;
+    padding: 12px 18px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .rg-marquee-pink {
+    color: #FF6FA5;
+  }
+
+  .rg-marquee-star {
+    color: #FFA733;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+
+  @media (max-width: 640px) {
+    .rg-marquee-group span {
+      padding: 11px 12px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rg-marquee-track {
+      animation: none;
+    }
+  }
   @keyframes floaty{0%,100%{transform:translateY(0px) rotate(-2deg);}50%{transform:translateY(-18px) rotate(2deg);}}
   @keyframes floaty2{0%,100%{transform:translateY(0px);}50%{transform:translateY(-12px);}}
   @keyframes blob{0%,100%{border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;}50%{border-radius:63% 37% 41% 59% / 55% 48% 52% 45%;}}
@@ -174,6 +243,33 @@
     }
     .rg-email{padding:48px 20px !important;}
     .rg-email h2{font-size:28px !important;}
+    .rg-newsletter {
+      padding: 32px 20px !important;
+    }
+
+    .rg-newsletter-inner {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      text-align: center !important;
+      gap: 20px !important;
+    }
+
+    .rg-newsletter-inner > div {
+      width: 100% !important;
+      max-width: none !important;
+      box-sizing: border-box !important;
+    }
+
+    .rg-newsletter form {
+      flex-direction: column !important;
+      width: 100% !important;
+    }
+
+    .rg-newsletter input,
+    .rg-newsletter button {
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
     .rg-email form{
       width:100% !important;
     }
@@ -208,6 +304,59 @@
   <div style="font-size:24px;font-weight:800;color:#1A1A1A;letter-spacing:-0.5px;">Raw Gravity</div>
 </header>
 
+<!-- INFINITE PROMO MARQUEE -->
+<div class="rg-marquee" aria-label="Raw Gravity special offer">
+  <div class="rg-marquee-track">
+
+    <div class="rg-marquee-group">
+      <span class="rg-marquee-star">✦</span>
+      <span class="rg-marquee-pink">Today -48%</span>
+      <span class="rg-marquee-star">✦</span>
+      <span>Buy now on Amazon</span>
+      <span class="rg-marquee-star">✦</span>
+      <span>Limited low price</span>
+
+      <span class="rg-marquee-star">✦</span>
+      <span class="rg-marquee-pink">Today -48%</span>
+      <span class="rg-marquee-star">✦</span>
+      <span>Buy now on Amazon</span>
+      <span class="rg-marquee-star">✦</span>
+      <span>Limited low price</span>
+
+      <span class="rg-marquee-star">✦</span>
+      <span class="rg-marquee-pink">Today -48%</span>
+      <span class="rg-marquee-star">✦</span>
+      <span>Buy now on Amazon</span>
+      <span class="rg-marquee-star">✦</span>
+      <span>Limited low price</span>
+    </div>
+
+    <div class="rg-marquee-group" aria-hidden="true">
+      <span class="rg-marquee-star">✦</span>
+      <span class="rg-marquee-pink">Today -48%</span>
+      <span class="rg-marquee-star">✦</span>
+      <span>Buy now on Amazon</span>
+      <span class="rg-marquee-star">✦</span>
+      <span>Limited low price</span>
+
+      <span class="rg-marquee-star">✦</span>
+      <span class="rg-marquee-pink">Today -48%</span>
+      <span class="rg-marquee-star">✦</span>
+      <span>Buy now on Amazon</span>
+      <span class="rg-marquee-star">✦</span>
+      <span>Limited low price</span>
+
+      <span class="rg-marquee-star">✦</span>
+      <span class="rg-marquee-pink">Today -48%</span>
+      <span class="rg-marquee-star">✦</span>
+      <span>Buy now on Amazon</span>
+      <span class="rg-marquee-star">✦</span>
+      <span>Limited low price</span>
+    </div>
+
+  </div>
+</div>
+
 <!-- BLOCK 1 - HERO -->
 <section data-screen-label="Hero" class="rg-hero" style="position:relative;padding:56px 48px 90px;background:linear-gradient(135deg,#FF3E8E 0%,#FF7A45 55%,#FFC24B 100%);overflow:hidden;">
   <div style="position:absolute;top:-120px;right:-100px;width:420px;height:420px;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,0.35),rgba(255,255,255,0) 70%);border-radius:50%;filter:blur(4px);"></div>
@@ -222,7 +371,7 @@
         <span style="color:#fff;font-weight:700;font-size:14px;">4.9 Amazon customer rating</span>
       </div>
       <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-        <a href="#email-form" style="display:inline-flex;align-items:center;text-decoration:none;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,0.28);">
+        <a href="https://www.amazon.com/dp/B0GTWB11LW?maas=maas_adg_B05D582BAB7E5BC8F40DEBA1EBC61AEE_afap_abs&amp;ref_=aa_maas&amp;tag=maas" data-amazon-link target="_blank" rel="noopener" style="display:inline-flex;align-items:center;text-decoration:none;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,0.28);">
           <span style="background:#171717;color:#fff;padding:15px 18px 15px 20px;border-radius:999px 0 0 999px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2 L20 6 L20 14 L12 22 L4 14 L4 6 Z" fill="#FF9900"></path></svg>
             amazon
@@ -309,7 +458,7 @@
     </div>
   </div>
   <div style="display:flex;justify-content:center;margin-top:40px;">
-    <a href="#email-form" style="display:inline-flex;align-items:center;text-decoration:none;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,0.18);">
+    <a href="https://www.amazon.com/dp/B0GTWB11LW?maas=maas_adg_B05D582BAB7E5BC8F40DEBA1EBC61AEE_afap_abs&amp;ref_=aa_maas&amp;tag=maas" data-amazon-link target="_blank" rel="noopener" style="display:inline-flex;align-items:center;text-decoration:none;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,0.18);">
       <span style="background:#171717;color:#fff;padding:15px 18px 15px 20px;border-radius:999px 0 0 999px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2 L20 6 L20 14 L12 22 L4 14 L4 6 Z" fill="#FF9900"></path></svg>
         amazon
@@ -363,7 +512,7 @@
     <div style="font-size:30px;color:#0D3B36;font-weight:600;">A <span class="script" style="font-size:1.35em;color:#E8437A;">new</span> generation of coffee</div><div style="font-size:22px;font-weight:800;color:#0D3B36;"><br></div>
     
   </div>
-  <a href="#email-form" style="position:relative;display:inline-flex;align-items:center;text-decoration:none;border-radius:999px;box-shadow:0 10px 24px rgba(0,0,0,0.2);">
+  <a href="https://www.amazon.com/dp/B0GTWB11LW?maas=maas_adg_B05D582BAB7E5BC8F40DEBA1EBC61AEE_afap_abs&amp;ref_=aa_maas&amp;tag=maas" data-amazon-link target="_blank" rel="noopener" style="position:relative;display:inline-flex;align-items:center;text-decoration:none;border-radius:999px;box-shadow:0 10px 24px rgba(0,0,0,0.2);">
     <span style="background:#171717;color:#fff;padding:14px 16px 14px 18px;border-radius:999px 0 0 999px;font-size:14px;font-weight:700;display:flex;align-items:center;gap:7px;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2 L20 6 L20 14 L12 22 L4 14 L4 6 Z" fill="#FF9900"></path></svg>
       amazon
@@ -410,28 +559,36 @@
         <div style="background:rgba(255,255,255,0.55);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.85);border-radius:22px;padding:22px;box-shadow:0 8px 24px rgba(0,0,0,0.05);"><div style="color:#FFA733;font-size:13px;letter-spacing:1.5px;margin-bottom:8px;">★★★★☆</div><div style="font-size:15px;font-weight:800;color:#1A1A1A;margin-bottom:8px;">&quot;My Gut Stopped Fighting Me&quot;</div><div style="font-size:13px;color:#5B5450;line-height:1.55;margin-bottom:16px;">&quot;My gut stopped fighting me the moment I switched. Still getting used to the taste, but the way I feel makes it worth it.&quot;</div><div style="display:flex;align-items:center;gap:10px;"><div style="width:34px;height:34px;border-radius:50%;background:#FF7A45;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;">R</div><div><div style="font-size:12.5px;font-weight:700;color:#1A1A1A;">Rachel M., 27</div><div style="font-size:11px;color:#8A8378;">Personal Trainer</div></div></div></div>
     </div>
   </div>
-</section><section
+</section>
+<!-- AMAZON OFFER -->
+<section
   id="email-form"
-  data-screen-label="Email Capture"
+  data-screen-label="Amazon offer"
   class="rg-email"
-  style="position:relative;padding:80px 48px;background:linear-gradient(135deg,#FF3E8E 0%,#8C4CFF 100%);overflow:hidden;text-align:center;scroll-margin-top:90px;"
+  style="position:relative;padding:80px 48px;background:linear-gradient(135deg,#FF3E8E 0%,#8C4CFF 100%);overflow:hidden;text-align:center;"
 >
   <div style="position:absolute;top:-140px;left:-100px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,255,255,0.25),transparent 70%);border-radius:50%;"></div>
   <div style="position:absolute;bottom:-160px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,0.2),transparent 70%);border-radius:50%;"></div>
 
   <div style="position:relative;max-width:560px;margin:0 auto;">
-    <h2 style="font-size:38px;font-weight:800;color:#fff;margin:0 0 14px;letter-spacing:-0.5px;">
-      Leave your email&nbsp;<br>
-      get a <span class="script" style="font-size:1.15em;color:rgb(255,224,138);">discount</span>
+
+    <h2 style="font-size:38px;font-weight:800;color:#fff;margin:0 0 28px;letter-spacing:-0.5px;">
+      Try Raw Coffee
+      <span class="script" style="font-size:1.15em;color:rgb(255,224,138);">today</span>
+      <br>with 48% off
     </h2>
+
     <div style="margin:0 auto 28px;max-width:440px;width:100%;box-sizing:border-box;background:#FFF8EF;border-radius:22px;box-shadow:0 14px 34px rgba(120,20,40,0.25);overflow:hidden;text-align:left;">
+
       <div style="padding:18px 22px 16px;display:flex;align-items:center;justify-content:space-between;gap:14px;">
         <div style="display:flex;flex-direction:column;gap:4px;">
           <span style="font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#E8437A;">Limited low price</span>
+
           <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
             <span style="font-size:40px;font-weight:800;color:#1A1A1A;letter-spacing:-1px;line-height:1;">$19.70</span>
             <span style="font-size:15px;color:#7A706B;white-space:nowrap;">
-              Full price <span style="text-decoration:line-through;text-decoration-color:#E8437A;text-decoration-thickness:2px;">$37.70</span>
+              Full price
+              <span style="text-decoration:line-through;text-decoration-color:#E8437A;text-decoration-thickness:2px;">$37.70</span>
             </span>
           </div>
         </div>
@@ -447,58 +604,78 @@
         <span>Lowest price ever · Goes up after the next 100 orders</span>
       </div>
     </div>
-    <form
-      id="lead-form"
-      style="display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap;justify-content:center;"
-    >
-      <input
-        id="email-input"
-        type="email"
-        required
-        placeholder="you@email.com"
-        style="flex:1;min-width:220px;padding:16px 20px;border-radius:999px;border:none;font-size:15px;outline:none;font-family:'Plus Jakarta Sans',sans-serif;"
-      >
 
-      <button
-        id="email-submit"
-        type="submit"
-        style="background:#171717;color:#FFE08A;border:none;padding:16px 26px;border-radius:999px;font-size:15px;font-weight:800;cursor:pointer;white-space:nowrap;"
-      >
-        Get my discount →
-      </button>
-    </form>
-
-    <div
-      id="success-state"
-      style="display:none;background:rgba(255,255,255,0.16);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.35);border-radius:24px;padding:32px;"
+    <a
+      href="https://www.amazon.com/dp/B0GTWB11LW?maas=maas_adg_B05D582BAB7E5BC8F40DEBA1EBC61AEE_afap_abs&amp;ref_=aa_maas&amp;tag=maas"
+      data-amazon-link
+      target="_blank"
+      rel="noopener"
+      style="display:inline-flex;align-items:center;text-decoration:none;border-radius:999px;box-shadow:0 18px 36px -14px rgba(0,0,0,0.45);"
     >
-      <div style="font-size:32px;font-weight:800;color:#fff;letter-spacing:4px;margin-bottom:20px;">
-        Awesome! Tap below and grab it
+      <span style="background:#171717;color:#fff;padding:16px 18px 16px 20px;border-radius:999px 0 0 999px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2 L20 6 L20 14 L12 22 L4 14 L4 6 Z" fill="#FF9900"></path>
+        </svg>
+        amazon
+      </span>
+      <span style="background:#FFA733;color:#171717;padding:16px 22px 16px 16px;border-radius:0 999px 999px 0;font-size:15px;font-weight:800;letter-spacing:0.2px;">
+        Buy Now on Amazon · 48% off
+      </span>
+    </a>
+
+  </div>
+</section>
+
+<!-- COMMUNITY SIGNUP -->
+<section
+  id="newsletter"
+  class="rg-newsletter"
+  data-screen-label="Community signup"
+  style="padding:44px 48px;background:#FFFDFA;border-top:1px solid rgba(26,26,26,0.06);"
+>
+  <div class="rg-newsletter-inner" style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
+
+    <div style="max-width:520px;flex:1 1 260px;">
+      <div style="font-size:24px;font-weight:800;color:#1A1A1A;letter-spacing:-0.6px;margin-bottom:6px;">
+        Join the Raw Gravity
+        <span class="script" style="color:#E8437A;font-size:1.1em;">community</span>
+      </div>
+      <div style="font-size:15px;color:#5B5450;line-height:1.55;">
+        Leave your email to be the first to hear about discounts, promos and events from Raw Gravity.
+      </div>
+    </div>
+
+    <div style="flex:1 1 360px;max-width:460px;">
+      <form id="lead-form" style="display:flex;gap:10px;width:100%;">
+        <input
+          id="email-input"
+          type="email"
+          required
+          placeholder="you@email.com"
+          style="flex:1;min-width:0;padding:15px 20px;border-radius:999px;border:1px solid rgba(26,26,26,0.12);background:#fff;font-size:15px;outline:none;font-family:'Plus Jakarta Sans',sans-serif;"
+        >
+
+        <button
+          id="email-submit"
+          type="submit"
+          style="background:#171717;color:#FFE08A;border:none;padding:15px 24px;border-radius:999px;font-size:15px;font-weight:800;cursor:pointer;white-space:nowrap;font-family:'Plus Jakarta Sans',sans-serif;"
+        >
+          Join the community
+        </button>
+      </form>
+
+      <div
+        id="success-state"
+        style="display:none;font-size:16px;font-weight:700;color:#2FBF9E;padding:14px 0;"
+      >
+        You're on the list — talk soon!
       </div>
 
-      <a
-        id="success-amazon-link"
-        href="#"
-        style="display:inline-flex;align-items:center;text-decoration:none;border-radius:999px;box-shadow:0 10px 24px rgba(0,0,0,0.25);margin-bottom:16px;"
-      >
-        <span style="background:#171717;color:#fff;padding:14px 16px 14px 18px;border-radius:999px 0 0 999px;font-size:14px;font-weight:700;display:flex;align-items:center;gap:7px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-            <path d="M12 2 L20 6 L20 14 L12 22 L4 14 L4 6 Z" fill="#FF9900"></path>
-          </svg>
-          amazon
-        </span>
-
-        <span style="background:#FFA733;color:#171717;padding:14px 20px 14px 14px;border-radius:0 999px 999px 0;font-size:14px;font-weight:800;">
-          Amazon with 48% off
-        </span>
-      </a>
+      <div style="font-size:12px;color:#8A8378;margin-top:10px;">
+        No spam. Unsubscribe anytime.
+      </div>
     </div>
 
-    <div
-      style="font-size:12.5px;color:rgba(255,255,255,0.75);margin-top:16px;"
-    >
-      No spam. Unsubscribe anytime. We respect your inbox.
-    </div>
   </div>
 </section>
 
@@ -516,7 +693,7 @@
 <span style="font-size:12px;font-weight:700;color:#5B5450;background:#FFF3E9;padding:7px 13px;border-radius:999px;">No Allergens</span>
 <span style="font-size:12px;font-weight:700;color:#5B5450;background:#FFF3E9;padding:7px 13px;border-radius:999px;">Made in US</span>
     </div>
-    <a href="#email-form"
+    <a href="https://www.amazon.com/dp/B0GTWB11LW?maas=maas_adg_B05D582BAB7E5BC8F40DEBA1EBC61AEE_afap_abs&amp;ref_=aa_maas&amp;tag=maas" data-amazon-link target="_blank" rel="noopener"
     class="floating-amazon-cta"
     style="
     display:inline-flex;
